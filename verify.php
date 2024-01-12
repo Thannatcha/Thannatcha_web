@@ -10,14 +10,23 @@
     <h1 style="text-align: center;">Webboard Thannatcha</h1>
     <hr>
     <div style="text-align: center;"> 
-    เข้าสู่ระบบด้วย <br>
-    Login = <?php echo $_POST['login']; ?> <br>
-    Password = <?php echo $_POST['password']; ?> <br>
-    
-    <?php /*สามารถให้แบบนี้ได้
-            echo"เข้าสู่ระบบด้วย <br>";
-            echo"Login =  $_POST[login] <br>";
-            echo"Password =  $_POST[password] <br>";*/
+    <?php 
+        $login = $_POST["login"];  
+        $password = $_POST["password"];
+        if($login == "admin" && $password=="ad1234"){
+            echo "ยินดีต้อนรับคุณ ADMIN <br>" ; 
+            echo"<a href=index.php>กลับไปหน้าหลัก</a>";
+        }elseif($login=="member" && $password=="mem1234"){
+            echo "ยินดีต้อนรับคุณ MEMBER <br>";
+            echo"<a href=index.php>กลับไปหน้าหลัก</a>";
+        }else{
+            echo "ชื่อบัญชีหรือรหัสผ่านไม่ถูกต้อง <br>" ; 
+            echo"<a href=index.php>กลับไปหน้าหลัก</a>";
+        }                                                    
+        /*echo"เข้าสู่ระบบด้วย <br>";
+        echo"Login =  $_POST[login] <br>";
+        echo"Password =  $_POST[password] <br>";
+        */
     ?>
 
 </div>
