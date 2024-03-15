@@ -10,7 +10,10 @@
          VALUES ('$top','$comm',NOW(),'$cate','$user')";
         $conn->exec($sql);
         $conn=null;
-        header("localhost:index.php");
+        header("location:index.php");
         die();
-    }
+}else{
+    header("location:index.php");
+    die();
+}
 ?>
