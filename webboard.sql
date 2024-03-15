@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 08, 2024 at 05:16 AM
+-- Generation Time: Mar 15, 2024 at 05:58 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -55,6 +55,13 @@ CREATE TABLE `comment` (
   `post_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `comment`
+--
+
+INSERT INTO `comment` (`id`, `content`, `post_date`, `user_id`, `post_id`) VALUES
+(1, 'ก๋วยตี๋ยวน้ำตก+แคบหมู', '2024-03-15 09:56:36', 1, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -75,8 +82,8 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`id`, `title`, `content`, `post_date`, `cat_id`, `user_id`) VALUES
-(1, 'เย็นนี้ทานอะไรดี?????', 'คิดเมนูอาหารเย็นนี้ไม่ออก มีแนะนำไหมคะ', '2024-03-08 11:09:03', 1, 1),
-(2, 'เย็นนี้ทานอะไรดี?????', 'คิดเมนูอาหารเย็นนี้ไม่ออก มีแนะนำไหมคะ', '2024-03-08 11:09:18', 1, 1);
+(5, 'วิธีการจำหนังสือก่อนเข้าสอบ!!!', 'ทำยังไงดี เราอ่านหนังสือสอบแล้วไม่เข้าหัวเลย', '2024-03-15 11:04:40', 2, 1),
+(7, 'หิวข้าว กินไรดี??', 'คือช่วยครีเอทเมนูใหม่ๆให้หน่อยค่ะ', '2024-03-15 11:08:15', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -99,7 +106,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `login`, `password`, `name`, `gender`, `email`, `role`) VALUES
-(1, 'thannatcha', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'yeen thanat', 'f', 'thannatcha@email.com', 'm');
+(1, 'thannatcha', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'yeen thanat', 'f', 'thannatcha@email.com', 'a'),
+(2, 'yeen', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'yee nn', 'f', 'thancccc@email.com', 'm');
 
 --
 -- Indexes for dumped tables
@@ -143,19 +151,19 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
